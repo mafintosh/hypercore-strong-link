@@ -14,7 +14,7 @@ const strongIdentifier = require('hypercore-strong-identifier')
 
 strongIdentifier.generate(someFeed, 42, function (err, link) {
   if (err) throw err
-  console.log(link) // {feed: someFeed.key, seq: 42, hash: <buf>}
+  console.log(link) // {feed: someFeed.key, seq: 42, treeHash: <buf>}
   strongIdentifier.verify(someFeed, link, function (err, data) {
     // returns an error the feed key doesn't match
     // or if the merkle tree hash is different
@@ -36,7 +36,7 @@ Returns an object that looks like this:
 {
   feed: <the-feed-key>,
   seq: <seq passed in>,
-  hash: <the root hash of the merkle tree at seq>
+  treeHash: <the root hash of the merkle tree at seq>
 }
 ```
 

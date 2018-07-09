@@ -11,7 +11,7 @@ function generate (feed, seq, cb) {
       cb(null, {
         feed: feed.key,
         seq,
-        hash: crypto.tree(roots)
+        treeHash: crypto.tree(roots)
       })
     })
   })
@@ -25,7 +25,7 @@ function verify (feed, ptr, cb) {
       if (err) return cb(err)
       feed.rootHashes(ptr.seq, function (err, roots) {
         if (err) return cb(err)
-        if (crypto.tree(roots).equals(ptr.hash)) return cb(null, data)
+        if (crypto.tree(roots).equals(ptr.treeHash)) return cb(null, data)
         cb(new Error('Checksum mismatch'))
       })
     })
