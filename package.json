@@ -1,6 +1,6 @@
 {
   "name": "hypercore-strong-identifier",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Generate a strong link to a hypercore seq that contains a root hash of the merkle tree at that time",
   "main": "index.js",
   "dependencies": {
