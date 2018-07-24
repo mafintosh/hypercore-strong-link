@@ -1,5 +1,5 @@
 {
-  "name": "hypercore-strong-identifier",
+  "name": "hypercore-strong-link",
   "version": "2.0.0",
   "description": "Generate a strong link to a hypercore seq that contains a root hash of the merkle tree at that time",
   "main": "index.js",
@@ -17,12 +17,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/mafintosh/hypercore-strong-identifier.git"
+    "url": "https://github.com/mafintosh/hypercore-strong-link.git"
   },
   "author": "Mathias Buus (@mafintosh)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mafintosh/hypercore-strong-identifier/issues"
+    "url": "https://github.com/mafintosh/hypercore-strong-link/issues"
   },
-  "homepage": "https://github.com/mafintosh/hypercore-strong-identifier"
+  "homepage": "https://github.com/mafintosh/hypercore-strong-link"
 }

@@ -1,21 +1,21 @@
-# hypercore-strong-identifier
+# hypercore-strong-link
 
 Generate a "strong" link to a hypercore seq that contains a root hash
 of the merkle tree at that time.
 
 ```
-npm install hypercore-strong-identifier
+npm install hypercore-strong-link
 ```
 
 ## Usage
 
 ``` js
-const strongIdentifier = require('hypercore-strong-identifier')
+const strongLink = require('hypercore-strong-link')
 
-strongIdentifier.generate(someFeed, 42, function (err, link) {
+strongLink.generate(someFeed, 42, function (err, link) {
   if (err) throw err
   console.log(link) // {feed: someFeed.key, seq: 42, treeHash: <buf>}
-  strongIdentifier.verify(someFeed, link, function (err, data) {
+  strongLink.verify(someFeed, link, function (err, data) {
     // returns an error the feed key doesn't match
     // or if the merkle tree hash is different
     if (err) throw err
@@ -27,7 +27,7 @@ strongIdentifier.generate(someFeed, 42, function (err, link) {
 
 ## API
 
-#### `strongIdentifier.generate(feed, seq, cb)`
+#### `strongLink.generate(feed, seq, cb)`
 
 Generate a strong identifier.
 Returns an object that looks like this:
@@ -40,7 +40,7 @@ Returns an object that looks like this:
 }
 ```
 
-#### `strongIdentifier.verify(feed, link, cb)`
+#### `strongLink.verify(feed, link, cb)`
 
 Verifies a strong link and returns the data at the seq if it validates.
 
