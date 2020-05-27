@@ -4,7 +4,7 @@
   "description": "Generate a strong link to a hypercore seq that contains a root hash of the merkle tree at that time",
   "main": "index.js",
   "dependencies": {
-    "hypercore-crypto": "^2.1.0"
+    "hypercore-crypto": "^1.0.0"
   },
   "devDependencies": {
     "hypercore": "^9.1.0",
