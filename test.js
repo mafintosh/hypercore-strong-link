@@ -1,5 +1,5 @@
 const tape = require('tape')
-const {verify, generate} = require('./')
+const { verify, generate } = require('./')
 const ram = require('random-access-memory')
 const hypercore = require('hypercore')
 
@@ -22,12 +22,12 @@ tape('basic', function (t) {
           verify(otherFeed, link, function (err) {
             t.ok(err, 'should error')
           })
-          const otherLink = {feed: otherFeed.key, seq: link.seq, treeHash: link.treeHash}
+          const otherLink = { feed: otherFeed.key, seq: link.seq, treeHash: link.treeHash }
           verify(otherFeed, otherLink, function (err, data) {
             t.error(err, 'no error')
             t.same(data, Buffer.from('c'))
           })
-          const badLink = {feed: badFeed.key, seq: link.seq, treeHash: link.treeHash}
+          const badLink = { feed: badFeed.key, seq: link.seq, treeHash: link.treeHash }
           verify(badFeed, badLink, function (err) {
             t.ok(err, 'had error')
           })
